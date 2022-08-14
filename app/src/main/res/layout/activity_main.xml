@@ -1,0 +1,233 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="@drawable/belotbackground">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:id="@+id/table">
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            >
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="13"
+                android:text="@string/teamA"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                android:id="@+id/textTeamA"
+                android:selectAllOnFocus="true"
+                android:layout_margin="0dp"
+                android:singleLine="true"
+                android:maxLength="@integer/maxLenghtOnTeamName"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="              VS"/>
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="@string/teamB"
+                android:textSize="18dp"
+                android:textStyle="italic"
+                android:id="@+id/textTeamB"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:gravity="right"
+                android:maxLength="@integer/maxLenghtOnTeamName"
+
+                />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:id="@+id/teamA"
+                android:layout_weight="1"
+                android:background="@color/edintextcolor"
+                android:textSize="30dp"
+                android:hint="score"
+                android:textStyle="italic"
+                android:maxLength="3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:id="@+id/teamB"
+                android:layout_weight="1"
+                android:background="@color/edintextcolor"
+                android:textSize="30sp"
+                android:hint="score"
+                android:textStyle="italic"
+                android:maxLength="3"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Add"
+                android:id="@+id/plusB"
+                android:textSize="28sp"
+                android:layout_weight="1"
+                android:onClick="addoutScoreB"
+                android:textStyle="italic"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:text="Out-A"
+                android:id="@+id/minusA"
+                android:textSize="28sp"
+                android:layout_weight="1"
+                android:onClick="outScore"
+                android:textStyle="italic"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Out-B"
+                android:id="@+id/minusB"
+                android:textSize="28sp"
+                android:layout_weight="1"
+                android:onClick="outScore"
+                android:textStyle="italic"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:text="       A"
+                android:textColor="@color/resultcolor"
+                android:textStyle="italic"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" |Results|"
+                android:textColor="@color/resultcolor"
+                android:textSize="30sp"
+                android:layout_weight="1"
+                android:textStyle="italic"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:text="     B"
+                android:textColor="@color/resultcolor"
+                android:textStyle="italic"
+                />
+
+        </TableRow>
+    </TableLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30sp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/table"
+            android:weightSum="6"
+            android:id="@+id/allResult">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/resultA"
+                android:textSize="30sp"
+                android:textColor="@color/resultcolor"
+                android:text="0"
+                android:textColorHint="@color/resultcolor"
+                android:layout_weight="2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/resultB"
+                android:textSize="30sp"
+                android:textColor="@color/resultcolor"
+                android:text="0"
+                android:textColorHint="@color/resultcolor"
+                android:layout_weight="1"/>
+
+
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/restartButton"
+            android:textSize="18sp"
+            android:onClick="restart"
+            android:textStyle="italic"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</RelativeLayout>

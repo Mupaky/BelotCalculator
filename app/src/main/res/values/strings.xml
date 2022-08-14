@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BelotCalculator</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="restartButton">Restart</string>
+    <string name="teamA">Team A</string>
+    <string name="teamB">Team B</string>
+
+</resources>
